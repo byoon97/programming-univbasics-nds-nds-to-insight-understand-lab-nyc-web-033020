@@ -1,10 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 # Call the method directors_database to retrieve the NDS
-def directors_database
-	rot13 = -> (s) { s.tr('A-Za-z', 'N-ZA-Mn-za-m') }
-  @_db ||= YAML.load(rot13.call(File.open("directors_db").read.to_s))
-end
+require 'pp'
 
 def pretty_print_nds(nds)
   pp nds
